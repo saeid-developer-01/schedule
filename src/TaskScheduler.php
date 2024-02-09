@@ -4,12 +4,10 @@ namespace IICN\Schedule;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static \IICN\Subscription\Services\Subscription command(string $class, array $parameters = [])
- * @method static \IICN\Subscription\Services\Subscription inTimezone(string $timezone)
- * @method static \IICN\Subscription\Services\Subscription inAllTimezone()
- * @method static \IICN\Subscription\Services\Subscription call($callbackFunction)
+ * @method static \IICN\Schedule\Services\Scheduler do(string $class, array $parameters = [])
+ * @method static \IICN\Schedule\Services\Scheduler at(string $dateTime, string|array $timezone = null)
  *
- * @see \IICN\Subscription\Services\Subscription
+ * @see \IICN\Schedule\Services\Scheduler
  */
 class TaskScheduler extends Facade
 {

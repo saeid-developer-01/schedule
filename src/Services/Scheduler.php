@@ -21,7 +21,7 @@ class Scheduler
 
     }
 
-    public function command(string $class, array $parameters = []): self
+    public function do(string $class, array $parameters = []): self
     {
         $this->classRunner = $class;
 
@@ -84,10 +84,10 @@ class Scheduler
     }
 
 
-    public function call($callbackFunction): void
-    {
-        $this->resetConfig();
-    }
+//    public function call($callbackFunction): void
+//    {
+//        $this->resetConfig();
+//    }
 
     private function resetConfig(): void
     {
