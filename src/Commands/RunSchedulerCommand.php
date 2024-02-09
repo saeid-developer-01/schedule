@@ -14,7 +14,7 @@ class RunSchedulerCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'app:run-scheduler-command';
+    protected $signature = 'scheduler:run-command';
 
     /**
      * The console command description.
