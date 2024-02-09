@@ -1,0 +1,33 @@
+{
+    "name": "iicn/schedule",
+    "description": "A short description of what your package does",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "IICN\\Schedule\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "IICN\\Schedule\\ScheduleServiceProvider"
+            ],
+            "aliases": {
+                "TaskScheduler": "IICN\\Schedule\\TaskScheduler"
+            }
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5.5",
+        "orchestra/testbench": "^8.20.0"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "IICN\\Schedule\\Tests\\": "tests/"
+        }
+    }
+}
