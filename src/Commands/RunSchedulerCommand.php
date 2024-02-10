@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\schedule\src\Commands;
+namespace IICN\Schedule\Commands;
 
 use Carbon\Carbon;
 use IICN\Schedule\Models\Schedule;

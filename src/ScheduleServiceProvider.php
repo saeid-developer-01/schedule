@@ -4,7 +4,7 @@ namespace IICN\Schedule;
 
 use IICN\Schedule\Services\Scheduler;
 use Illuminate\Support\ServiceProvider;
-use Modules\schedule\src\Commands\RunSchedulerCommand;
+use IICN\Schedule\Commands\RunSchedulerCommand;
 
 class ScheduleServiceProvider extends ServiceProvider
 {
