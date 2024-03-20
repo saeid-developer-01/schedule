@@ -51,7 +51,7 @@ class Scheduler
         $cron = null;
 
         if (!$timezone) {
-            $timezone = config('app.timezone');
+            $timezone = config('schedule.timezones');
         }
 
         if (is_string($timezone)) {

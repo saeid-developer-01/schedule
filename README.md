@@ -1,19 +1,56 @@
-# Subscription Package
+# Schedule Package
 
-Welcome to the Subscription package!
-
-## Project Overview
-
-The project is organized user base.
+Welcome to the Schedule package!
 
 ## Getting Started
 
-### Clone the Project
+### use:
 
-To clone the entire project, run the following commands:
+create class for schedule and extend from: 
+```\IICN\Schedule\Models\Schedule\ScheduleBuilder```
 
-```bash
-cd Modules
-git clone https://github.com/your_username/packages-iicn-subscription.git
-mv packages-iicn-subscription/ Subscription/
+example: 
+
+```php
+<?php
+
+use IICN\Schedule\ScheduleBuilder;
+
+class TestRunSchedule extends ScheduleBuilder
+{
+
+    public function __construct($arg1, $arg2) {
+    
+    }
+    public function run()
+    {
+        // TODO: Implement run() method.
+    }
+}
+```
+
+run code based on UTC:
+
+```php
+use IICN\Schedule\TaskScheduler;
+
+TaskScheduler::do(TestRunSchedule::class, [$arg1, $arg2])->at('2024-02-02 20:28', "UTC");
+```
+
+
+run code in multi timezone:
+
+```php
+use IICN\Schedule\TaskScheduler;
+
+TaskScheduler::do(TestRunSchedule::class, [$arg1, $arg2])->at('2024-02-02 20:28', ["UTC", "Tehran"]);
+```
+
+
+run code in all timezones:
+
+```php
+use IICN\Schedule\TaskScheduler;
+
+TaskScheduler::do(TestRunSchedule::class, [$arg1, $arg2])->at('2024-02-02 20:28');
 ```

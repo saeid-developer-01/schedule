@@ -29,6 +29,10 @@ class ScheduleServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/schedule.php', 'schedule'
+        );
+
         $this->app->bind('scheduler', function () {
             return new Scheduler();
         });
