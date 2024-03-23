@@ -4,6 +4,14 @@ Welcome to the Schedule package!
 
 ## Getting Started
 
+### add Command to Kernel Schedule:
+
+add command to `app/Console/Kernel.php` in method `shedule`:
+
+```php
+$schedule->command('scheduler:run-command')->everyMinute();
+```
+
 ### use:
 
 create class for schedule and extend from: 
