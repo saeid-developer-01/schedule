@@ -34,16 +34,19 @@ class RunSchedulerCommand extends Command
 
         foreach ($schedules as $schedule) {
             try {
+                $this->info("start schedule id: " . $schedule->id);
                 $this->runClass($schedule);
-            } catch (\Exception) {
+                $this->info("end schedule id: " . $schedule->id);
+            } catch (\Exception $exception) {
+                $this->error("end schedule id: " . $schedule->id . "&& error: " . $exception->getMessage());
             }
         }
     }
 
     protected function runClass(Schedule $schedule)
     {
-        if (app($schedule->class_runner) instanceof ScheduleBuilder) {
-            $classRunner = new ${$schedule->class_runner}($schedule->input_parameters);
+        $classRunner = new $schedule->class_runner(...$schedule->input_parameters);
+        if ($classRunner instanceof ScheduleBuilder) {
             $classRunner->handle($schedule);
         }
     }
