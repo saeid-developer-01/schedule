@@ -64,6 +64,7 @@ class Scheduler
                 $this->storeInDB($time, $zone, $cron, $time->year);
             }
         }
+        $this->resetConfig();
     }
 
     private function storeInDB(Carbon $nextRun, string $timezone, string $cron = null, int|null $year = null): void
@@ -79,8 +80,6 @@ class Scheduler
             'just_once' => $this->justOnce,
             'timezone' => $timezone
         ]);
-
-        $this->resetConfig();
     }
 
 
