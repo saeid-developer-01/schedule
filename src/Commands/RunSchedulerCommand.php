@@ -30,7 +30,7 @@ class RunSchedulerCommand extends Command
     {
         $date = Carbon::now('UTC')->format('Y-m-d H:i:00');
 
-        $schedules = Schedule::query()->where('next_run' , $date)->get();
+        $schedules = Schedule::query()->where("enabled", true)->where('next_run' , $date)->get();
 
         foreach ($schedules as $schedule) {
             try {
